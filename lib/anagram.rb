@@ -8,13 +8,8 @@ class Anagram
   attr_accessor :str
 
   def match(arr)
-    match_arr = []
-    char_arr = @str.split("").sort
-    arr.each do |item|
-      if char_arr == item.split("").sort
-        match_arr << item
-      end
+    arr.select do |item|
+      item.split("").sort.join == @str.split("").sort.join
     end
-    match_arr
   end
 end
