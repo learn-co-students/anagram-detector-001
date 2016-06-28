@@ -1,3 +1,5 @@
+require 'pry'
+
 describe 'Anagram' do 
   it 'should detect no matches' do
     diaper = Anagram.new('diaper')
@@ -19,6 +21,7 @@ describe 'Anagram' do
   it 'should detect multiple anagrams' do
     detector = Anagram.new('allergy')
     allergy = detector.match %w(gallery ballerina regally clergy largely leading)
+    #binding.pry
     expect(allergy).to eq(['gallery', 'regally', 'largely'])
   end
 end
